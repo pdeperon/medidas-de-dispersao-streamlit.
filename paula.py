@@ -9,12 +9,15 @@ if "valores" not in st.session_state:
 
 with st.form("form_medidas"):
     st.subheader("Calcular Medidas de Dispersão")
-    valor = st.number_input("Digite um valor: ",min_value=0.0, step=0.01)
+    valor = st.number_input("Digite um valor: ",min_value=0.0, step=0.01, format="%.2f")
     enviado = st.form_submit_button("Adicionar Valor")
 
 if enviado:
-    st.session_state.valores.append(valor)  
-    st.success("Valor Adicionado com Sucesso!!")
+    if not isinstance(valor, (int, float)):
+        st.error("Entrada inválida! Insira apenas números.")
+    else:
+        st.session_state.valores.append(valor)  
+        st.success("Valor Adicionado com Sucesso!!")
 
     st.write("Valores adicionados:", st.session_state.valores)
 
