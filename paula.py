@@ -39,7 +39,7 @@ else:
         variancia_amostral = statistics.variance(st.session_state.valores)
         desvio_padrao = math.sqrt(variancia_amostral)
         coeficiente_variacao = (desvio_padrao / media) * 100
-        st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f}")
+        st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f} %")
    
     if st.button("Exibir Resultados"):
         media = float(sum(st.session_state.valores) / len(st.session_state.valores))
