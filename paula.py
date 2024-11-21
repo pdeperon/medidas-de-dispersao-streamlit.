@@ -30,16 +30,16 @@ else:
     elif st.button("Calcular a Variancia"):
         variancia_amostral = statistics.variance(st.session_state.valores)
         st.write(f"A variancia amostral foi de {variancia_amostral}")
-    elif st.button("Calcular Desvio Padrao"):
+    elif st.button("Calcular Desvio Padrão"):
          variancia_amostral = statistics.variance(st.session_state.valores)
          desvio_padrao = math.sqrt(variancia_amostral)
          st.write(f"O desvio padrao foi de {desvio_padrao}")
-    elif st.button("Calcular o Coeficiente de Variacao"):
+    elif st.button("Calcular o Coeficiente de Variação"):
         media = float(sum(st.session_state.valores) / len(st.session_state.valores))
         variancia_amostral = statistics.variance(st.session_state.valores)
         desvio_padrao = math.sqrt(variancia_amostral)
         coeficiente_variacao = (desvio_padrao / media) * 100
-        st.write(f"O coeficiente de variacao é de {coeficiente_variacao:.2f}")
+        st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f}")
    
     if st.button("Exibir Resultados"):
         media = float(sum(st.session_state.valores) / len(st.session_state.valores))
@@ -51,9 +51,9 @@ else:
         st.subheader("Resultados Finais")
         st.write(f"A média dos valores é {media}")
         st.write(f"A amplitude dos valores foi de {amplitude}")
-        st.write(f"A variancia foi de {variancia_amostral}")
-        st.write(f"O desvio padrao foi de {desvio_padrao}")
-        st.write(f"O coeficiente de variacao é de {coeficiente_variacao:.2f}")
+        st.write(f"A variância foi de {variancia_amostral}")
+        st.write(f"O desvio padrão foi de {desvio_padrao:.2f}")
+        st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f}")
 
     elif st.button("Voltar e escolher outra opção"):
         st.session_state.opcao_calculo = None
