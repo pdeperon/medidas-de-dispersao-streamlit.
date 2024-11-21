@@ -53,7 +53,7 @@ else:
         st.write(f"A amplitude dos valores foi de {amplitude}")
         st.write(f"A variância foi de {variancia_amostral}")
         st.write(f"O desvio padrão foi de {desvio_padrao:.2f}")
-        st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f}")
+        st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f} %")
 
     elif st.button("Voltar e escolher outra opção"):
         st.session_state.opcao_calculo = None
