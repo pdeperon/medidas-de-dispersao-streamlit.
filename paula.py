@@ -40,7 +40,7 @@ else:
          variancia_amostral = statistics.variance(st.session_state.valores)
          desvio_padrao = math.sqrt(variancia_amostral)
          st.write("O desvio padrão é a raiz quadrada da variância. Ele representa a dispersão dos valores em relação à média em unidades originais dos dados.")
-         st.write(f"O desvio padrao foi de {desvio_padrao}")
+         st.write(f"O desvio padrao foi de {desvio_padrao:.2f}")
 
     elif st.button("Calcular o Coeficiente de Variação"):
         media = float(sum(st.session_state.valores) / len(st.session_state.valores))
