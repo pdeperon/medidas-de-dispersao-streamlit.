@@ -44,16 +44,14 @@ else:
     if st.button("Exibir Resultados"):
         media = float(sum(st.session_state.valores) / len(st.session_state.valores))
         amplitude = max(st.session_state.valores) - min(st.session_state.valores)
-        variancia_pop = statistics.pvariance(st.session_state.valores)
         variancia_amostral = statistics.variance(st.session_state.valores)
-        desvio_padrao = math.sqrt(variancia_pop)
+        desvio_padrao = math.sqrt(variancia_amostral)
         coeficiente_variacao = (desvio_padrao / media) * 100
 
         st.subheader("Resultados Finais")
         st.write(f"A média dos valores é {media}")
         st.write(f"A amplitude dos valores foi de {amplitude}")
-        st.write(f"A variancia populacional foi de {variancia_pop}")
-        st.write(f"A variancia amostral foi de {variancia_amostral}")
+        st.write(f"A variancia foi de {variancia_amostral}")
         st.write(f"O desvio padrao foi de {desvio_padrao}")
         st.write(f"O coeficiente de variacao é de {coeficiente_variacao:.2f}")
 
