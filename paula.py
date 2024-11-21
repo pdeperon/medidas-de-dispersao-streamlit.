@@ -23,23 +23,23 @@ if len(st.session_state.valores) < 2:
 else:
     if st.button("Calcular Média"):
          media = float(sum(st.session_state.valores) / len(st.session_state.valores))
-         print("A média é a soma de todos os valores de um conjunto de dados dividida pelo número total de valores.")
+         st.write("A média é a soma de todos os valores de um conjunto de dados dividida pelo número total de valores.")
          st.write(f"A média dos valores é {media}")
 
     elif st.button("Calcular amplitude"):
         amplitude = max(st.session_state.valores) - min(st.session_state.valores)
-        print("A amplitude é a diferença entre o maior e o menor valor de um conjunto de dados. Mede a dispersão simples dos dados.")
+        st.write("A amplitude é a diferença entre o maior e o menor valor de um conjunto de dados. Mede a dispersão simples dos dados.")
         st.write(f"A amplitude dos valores foi de {amplitude}")
 
     elif st.button("Calcular a Variancia"):
         variancia_amostral = statistics.variance(st.session_state.valores)
-        print("A variância mede o quão dispersos os valores estão em relação à média. É a média dos quadrados das diferenças entre cada valor e a média.")
+        st.write("A variância mede o quão dispersos os valores estão em relação à média. É a média dos quadrados das diferenças entre cada valor e a média.")
         st.write(f"A variancia amostral foi de {variancia_amostral}")
 
     elif st.button("Calcular Desvio Padrão"):
          variancia_amostral = statistics.variance(st.session_state.valores)
          desvio_padrao = math.sqrt(variancia_amostral)
-         print("O desvio padrão é a raiz quadrada da variância. Ele representa a dispersão dos valores em relação à média em unidades originais dos dados.")
+         st.write("O desvio padrão é a raiz quadrada da variância. Ele representa a dispersão dos valores em relação à média em unidades originais dos dados.")
          st.write(f"O desvio padrao foi de {desvio_padrao}")
 
     elif st.button("Calcular o Coeficiente de Variação"):
@@ -47,7 +47,7 @@ else:
         variancia_amostral = statistics.variance(st.session_state.valores)
         desvio_padrao = math.sqrt(variancia_amostral)
         coeficiente_variacao = (desvio_padrao / media) * 100
-        print("O coeficiente de variação mede a dispersão relativa de um conjunto de dados em relação à média. É expresso como uma porcentagem e permite comparar a variabilidade de diferentes conjuntos de dados, mesmo que tenham médias diferentes.")
+        st.write("O coeficiente de variação mede a dispersão relativa de um conjunto de dados em relação à média. É expresso como uma porcentagem e permite comparar a variabilidade de diferentes conjuntos de dados, mesmo que tenham médias diferentes.")
         st.write(f"O coeficiente de variação é de {coeficiente_variacao:.2f} %")
    
     if st.button("Exibir Resultados"):
